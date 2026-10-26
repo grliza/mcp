@@ -1,0 +1,58 @@
+{
+  "name": "a1-mcp-server",
+  "version": "0.1.0",
+  "description": "MCP server for the A1 platform (OLAP, cube-based) — model lifecycle via REST API",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/example/a1-mcp-server.git"
+  },
+  "author": "",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "a1-mcp-server": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "!dist/**/*.map"
+  ],
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "all",
+    "printWidth": 80,
+    "tabWidth": 2,
+    "arrowParens": "always",
+    "endOfLine": "lf"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "start": "node dist/index.js",
+    "dev": "tsx src/index.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc --noEmit && eslint ."
+  },
+  "keywords": [
+    "mcp",
+    "olap",
+    "a1",
+    "cube"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.31.0",
+    "dotenv": "^18.0.5",
+    "pino": "^10.3.1",
+    "undici": "^7.29.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  }
+}
